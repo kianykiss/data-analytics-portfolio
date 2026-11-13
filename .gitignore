@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Arquivos de ambiente e credenciais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Arquivos temporários
+.ipynb_checkpoints/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+
+# Dados locais
+data/raw/
