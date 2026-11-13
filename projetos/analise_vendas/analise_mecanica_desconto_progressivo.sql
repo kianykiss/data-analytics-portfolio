@@ -21,7 +21,7 @@ WITH BASE1 AS (
 
     FROM sandbox.canal_online.kd_full_commerce_online AS ORD
 
-    LEFT JOIN sandbox.canal_online.tb_grade_de_mecanicas AS MEC
+    LEFT JOIN sandbox.canal_online.tb_grade_de_mecanicas AS MEC --apenas uma linha por produto por mecênica
         ON ORD.DT_CAPTADA BETWEEN MEC.DT_INI AND MEC.DT_FIM
         AND REPLACE(
             CASE
@@ -50,8 +50,8 @@ BASE2 AS (
             WHEN ROUND(SUM(ITENS), 2) = 3 THEN 'IGUAL A 3'
             WHEN ROUND(SUM(ITENS), 2) = 4 THEN 'IGUAL A 4'
             WHEN ROUND(SUM(ITENS), 2) >= 5 THEN 'MAIOR OU IGUAL A 5'
-        END AS STATUS_ITENS,
-        ROUND(SUM(RB_FRETE), 2) AS RB_FRETE,
+        END AS STATUS_ITENS, --sempre itens inteiros
+        ROUND(SUM(RB_FRETE), 2) AS RB_FRETE, --receita nível item
         ROUND(SUM(ITENS), 2) AS UNIDADES
 
     FROM BASE1
