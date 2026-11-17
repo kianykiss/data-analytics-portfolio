@@ -129,7 +129,3 @@ ORDER BY
     ANOMES,
     TIPO_CPF,
     MODELO_COMERCIAL;
-
-cd "C:\Users\kiany\Documents\data-analytics-portfolio"
-
-code projetos/analise_vendas/analise_sobreposicao_clientes_marketplace.sql
